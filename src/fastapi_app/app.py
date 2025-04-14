@@ -36,7 +36,7 @@ templates.env.globals["url_for"] = app.url_path_for
 #         yield session
 
 @app.get("/", response_class=HTMLResponse)
-async def index(request: Request, session: Session = Depends(get_db_session)):
+async def index(request: Request):
     logger.info("root called")
     # statement = (
     #     select(Restaurant, func.avg(Review.rating).label("avg_rating"), func.count(Review.id).label("review_count"))
